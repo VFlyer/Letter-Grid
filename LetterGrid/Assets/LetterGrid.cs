@@ -171,7 +171,8 @@ public class LetterGrid : MonoBehaviour {
           TempLog += "\n";
         }
       }
-      Debug.LogFormat("[Letter Grid #{0}] The grid is:\n{1}", moduleId, TempLog);
+      Debug.LogFormat("[Letter Grid #{0}] The grid is:", moduleId);
+      Debug.LogFormat("[Letter Grid #{0}] {1}", moduleId, TempLog);
       Reshuffle:
       FontMaterialNumbers.Shuffle();
       for (int i = 0; i < 25; i++) {
@@ -180,7 +181,12 @@ public class LetterGrid : MonoBehaviour {
           goto Reshuffle;
         }
       }
-      Debug.LogFormat("[Letter Grid #{0}] The encryptions in reading order are as follows:\n{1} | {2} | {3} | {4} | {5}\n{6} | {7} | {8} | {9} | {10}\n{11} | {12} | {13} | {14} | {15}\n{16} | {17} | {18} | {19} | {20}\n{21} | {22} | {23} | {24} | {25}", moduleId, EncryptionsName[FontMaterialNumbers[0]], EncryptionsName[FontMaterialNumbers[1]], EncryptionsName[FontMaterialNumbers[2]], EncryptionsName[FontMaterialNumbers[3]], EncryptionsName[FontMaterialNumbers[4]], EncryptionsName[FontMaterialNumbers[5]], EncryptionsName[FontMaterialNumbers[6]], EncryptionsName[FontMaterialNumbers[7]], EncryptionsName[FontMaterialNumbers[8]], EncryptionsName[FontMaterialNumbers[9]], EncryptionsName[FontMaterialNumbers[10]], EncryptionsName[FontMaterialNumbers[11]], EncryptionsName[FontMaterialNumbers[12]], EncryptionsName[FontMaterialNumbers[13]], EncryptionsName[FontMaterialNumbers[14]], EncryptionsName[FontMaterialNumbers[15]], EncryptionsName[FontMaterialNumbers[16]], EncryptionsName[FontMaterialNumbers[17]], EncryptionsName[FontMaterialNumbers[18]], EncryptionsName[FontMaterialNumbers[19]], EncryptionsName[FontMaterialNumbers[20]], EncryptionsName[FontMaterialNumbers[21]], EncryptionsName[FontMaterialNumbers[22]], EncryptionsName[FontMaterialNumbers[23]], EncryptionsName[FontMaterialNumbers[24]]);
+      Debug.LogFormat("[Letter Grid #{0}] The encryptions in reading order are as follows:", moduleId);
+      Debug.LogFormat("[Letter Grid #{0}] {1} | {2} | {3} | {4} | {5}", moduleId, EncryptionsName[FontMaterialNumbers[0]], EncryptionsName[FontMaterialNumbers[1]], EncryptionsName[FontMaterialNumbers[2]], EncryptionsName[FontMaterialNumbers[3]], EncryptionsName[FontMaterialNumbers[4]]);
+      Debug.LogFormat("[Letter Grid #{0}] {1} | {2} | {3} | {4} | {5}", moduleId, EncryptionsName[FontMaterialNumbers[5]], EncryptionsName[FontMaterialNumbers[6]], EncryptionsName[FontMaterialNumbers[7]], EncryptionsName[FontMaterialNumbers[8]], EncryptionsName[FontMaterialNumbers[9]]);
+      Debug.LogFormat("[Letter Grid #{0}] {1} | {2} | {3} | {4} | {5}", moduleId, EncryptionsName[FontMaterialNumbers[10]], EncryptionsName[FontMaterialNumbers[11]], EncryptionsName[FontMaterialNumbers[12]], EncryptionsName[FontMaterialNumbers[13]], EncryptionsName[FontMaterialNumbers[14]]);
+      Debug.LogFormat("[Letter Grid #{0}] {1} | {2} | {3} | {4} | {5}", moduleId, EncryptionsName[FontMaterialNumbers[15]], EncryptionsName[FontMaterialNumbers[16]], EncryptionsName[FontMaterialNumbers[17]], EncryptionsName[FontMaterialNumbers[18]], EncryptionsName[FontMaterialNumbers[19]]);
+      Debug.LogFormat("[Letter Grid #{0}] {1} | {2} | {3} | {4} | {5}", moduleId, EncryptionsName[FontMaterialNumbers[20]], EncryptionsName[FontMaterialNumbers[21]], EncryptionsName[FontMaterialNumbers[22]], EncryptionsName[FontMaterialNumbers[23]], EncryptionsName[FontMaterialNumbers[24]]);
       for (int i = 0; i < 25; i++) {
         if (FontMaterialNumbers[i] < 20) {
           ModuleLetterText[i].font = Fonts[FontMaterialNumbers[i]];
