@@ -29,7 +29,7 @@ public class LetterGrid : MonoBehaviour {
    int Placement;
    int tiwmi;
 
-   string[] ValidWords = { "ACTOR", "BRAWL", "CURVE", "DELTA", "ELUDE", "FIRED", "GRABS", "HOTEL", "INERT", "KNIFE", "LEMON", "MIGHT", "NYMPH", "OVALS", "PLUMS", "QUOTH", "RAIDS", "SQUAB", "TOXIC", "ULZIE", "VEILS", "WAVED", "XRAYS", "YANKS", "ZONED" };
+   string[] ValidWords = { "ACTOR", "BRAWL", "CURVE", "DELTA", "EXISH", "FIRED", "GRABS", "HOTEL", "INERT", "KNIFE", "LEMON", "MIGHT", "NYMPH", "OVALS", "PLUMS", "QUOTH", "RAIDS", "SQUAB", "TOXIC", "ULZIE", "VEILS", "WAVED", "XRAYS", "YANKS", "ZONED" };
    string[] EncryptionsName = { "Animals", "Bioblanner", "Boozleglyphs", "Braille", "Decoborders", "Dancing Men", "English", "Hieroglyphs", "Cube Symbols", "Lombax", "Moon Type", "Pigpen", "R'lyehian", "Elder Futhark", "Semaphore", "Semaphore Telegraph", "Standard Galactic Alphabet", "CMP", "Wingdings", "Zoni", "Morse Code", "Tap Code", "More Code", "Binary", "Maritime" };
    string[] Morephabet = { ".-.,.", "=", "=,,", "=,-", ".,.-=", "-.-", ".", ",..", "=--=,", ",", "=-,=", ",,.", "--.=", "-----", "-", "==.", ",--=", "-,==", "=.,,", "=====", "=,", ",=", "=.", "-,", ",=-" };
    string[] MorseLetters = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
@@ -76,6 +76,10 @@ public class LetterGrid : MonoBehaviour {
       }
       if (TempValidWord.Count() == 0 && tiwmi <= 1000) {
          tiwmi++;
+         if (tiwmi == 1000) {
+            GetComponent<KMBombModule>().HandlePass();
+            return;
+         }
          goto Restart;
       }
       //Debug.Log(Letters[CurrentLetter]);
@@ -359,6 +363,7 @@ public class LetterGrid : MonoBehaviour {
       Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Arrow.transform);
       if (moduleSolved) {
          Audio.PlaySoundAtTransform("correct", this.transform);
+         return;
       }
       for (int i = 0; i < 10; i++) {
          if (Arrow == Arrows[i]) {
