@@ -35,7 +35,7 @@ public class LetterGrid : MonoBehaviour {
    string[] MorseLetters = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
    List<string> Sync = new List<string> { "a", "p'", "C", "t'", "e", "f", "k'", "h", "i", "k", "r'", "m", "n", "o", "p", "?", "r", "s", "t", "u", "f'", "w", "!", "y", "s'" };
    List<string> TempValidWord = new List<string> { };
-   List<string> PigpenSwap = new List<string> { "A", "C", "E", "G", "I", "K", "M", "O", "Q", "S", "U", "W", "Y", "B", "D", "F", "H", "L", "N", "P", "R", "T", "V", "X", "Z" };
+   List<string> PigpenSwap = new List<string> { "A", "C", "E", "G", "I", "K", "M", "O", "Q", "D", "F", "H", "J", "L", "N", "P", "R", "S", "U", "W", "Y", "T", "V", "X", "Z" };
    string Alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
    static char[] Letters = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
