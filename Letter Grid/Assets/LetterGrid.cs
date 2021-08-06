@@ -181,7 +181,7 @@ public class LetterGrid : MonoBehaviour {
       FontMaterialNumbers.Shuffle();
       for (int i = 0; i < 25; i++) {
          if ((FontMaterialNumbers[i] == 14 && ModuleLetterText[i].text == "N") || (FontMaterialNumbers[i] == 7 && "FX".Contains(ModuleLetterText[i].text)) ||
-         (FontMaterialNumbers[i] == 13 && "KW".Contains(ModuleLetterText[i].text)) || (FontMaterialNumbers[i] == 17 && "?!".Contains(ModuleLetterText[i].text))) {
+         (FontMaterialNumbers[i] == 13 && "KW".Contains(ModuleLetterText[i].text)) || (FontMaterialNumbers[i] == 17 && (ModuleLetterText[i].text == "?" || ModuleLetterText[i].text == "!"))) {
             goto Reshuffle;
          }
       }
