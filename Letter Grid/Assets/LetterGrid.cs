@@ -455,7 +455,7 @@ public class LetterGrid : MonoBehaviour {
          yield return "sendtochaterror I don't understand!";
          yield break;
       }
-      else if (!"ROW".Contains(Parameters[0]) && !"12345".Contains(Parameters[1]) && !"COLUMN".Contains(Parameters[0]) && Parameters[1].Length != 1) {
+      else if ((!"ROW".Contains(Parameters[0]) && !"COLUMN".Contains(Parameters[0])) || !Parameters[1].EqualsAny("1", "2", "3", "4", "5")) {
          yield return "sendtochaterror I don't understand!";
          yield break;
       }
