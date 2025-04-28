@@ -446,7 +446,7 @@ public class LetterGrid : MonoBehaviour {
    }
 
 #pragma warning disable 414
-   private readonly string TwitchHelpMessage = @"Use !{0} row/column 1/2/3/4/5 to select that row or column.";
+   private readonly string TwitchHelpMessage = "Use \"!{0} row/column 1/2/3/4/5\" to select that row or column. Rows are numbered from top to bottom. Columns are numbered from left to right.";
 #pragma warning restore 414
 
    IEnumerator ProcessTwitchCommand (string Command) {
@@ -460,6 +460,7 @@ public class LetterGrid : MonoBehaviour {
          yield break;
       }
       else {
+            yield return null;
          if (Parameters[0] == "ROW") {
             Arrows[int.Parse(Parameters[1]) + 4].OnInteract();
          }
